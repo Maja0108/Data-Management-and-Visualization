@@ -32,7 +32,7 @@ My codebook:</p>
 <li>urbanrate (2008) urban population (% of total). Urban population refers to people living in urban areas as defined by national statistical offices (calculated using World Bank population estimates and urban ratios from the United Nations World Urbanization Prospects).</li>
 </ul>
 
-<p>This assigmnet is about datamanagement. My dataset contains only continous variables, there are no categorical variable, which makes this job a little harder. There is no missing data and nan data in these set, so I could not use any methodology to solve such a problem. So I tried to subsetting my data and analyse it.</p>
+<p>This assignment is about data management. My dataset contains only continuous variables, there is no categorical variable, which makes this job a little harder. There is no missing data and nan data in these set, so I could not use any methodology to solve such a problem. So I tried to subsetting my data and analyse it.</p>
 
 <h3>
 <a id="code" class="anchor" href="#code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code</h3>
@@ -41,7 +41,7 @@ My codebook:</p>
 import numpy</p>
 
 <p>pandas.options.display.float_format = '{:,.2f}'.format
-data = pandas.read_csv('C:\Users\Ajna\Downloads\gapminder.csv', low_memory = False)
+data = pandas.read_csv('gapminder.csv', low_memory = False)
 data_columns = map(str.lower, data.columns)</p>
 
 <h1>
@@ -145,7 +145,11 @@ print result5`</p>
 
 <ul>
 <li>Life expectancy more than 70 years
-I have chosen 70 years because range between 70-80 years is the most frequent. Between female employrate and life expectancy have no direct connection, there is only a slight difference between the original and subsetted results. There is more effect on the employrate, there is no change in the maximum at 50-60%, but the ratio is changed from 0.31 to 0.40, and the 80-90% range was disappeared, so the conncetion is not linear between the employrate and lifeexpectancy, but this will need more detailed analysis later. But in more urbanised countries usually people live longer, from 60% urbanrate this effect is more obvious.</li>
+I have chosen 70 years because range between 70-80 years is the most frequent. Between female employ rate and life expectancy have no direct connection, there is only a slight difference between the original and subsetted results. There is more effect on the employrate, there is no change in the maximum at 50-60%, but the ratio is changed from 0.31 to 0.40, and the 80-90% range was disappeared, so the connection is not linear between the employrate and life expectancy, but this will need more detailed analysis later. But in more urbanised countries usually, people live longer, from 60% urban rate this effect is more obvious.</li>
+<li>Urban rate more than 60%
+The connection of life expectancy and the urban rate is seen here: 70-80: 56%. For employ rates, the effect is complex, narrowed the range. </li>
+<li>Female employ rate more than 50%
+Female employ rate change life expectancy, the maximum lowered to 60-70 years range, but more people live longer than 80 years. In this case, the overall employrate is between 60-80%. Female employ rate slightly affects the urban rate, which is around 10% in almost all ranges.</li>
 </ul>
 
       <footer class="site-footer">
